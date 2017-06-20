@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.davidmadethis.dampp"
-        minSdkVersion 9
+        minSdkVersion 11
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -30,6 +30,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'cc.cloudist.acplibrary:library:1.2.1'
+    compile 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
 
 
     testCompile 'junit:junit:4.12'

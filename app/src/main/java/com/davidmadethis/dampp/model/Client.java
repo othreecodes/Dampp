@@ -1,16 +1,24 @@
 package com.davidmadethis.dampp.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by root on 6/20/17.
  */
 
 public class Client {
 
+    @SerializedName("username")
     private String username;
+    @SerializedName("password")
     private String password;
+    @SerializedName("is_verified")
     private boolean isVerified;
+    @SerializedName("is_active")
     private boolean isActive;
+    @SerializedName("full_name")
     private String fullName;
+    @SerializedName("photo_url")
     private String photoUrl;
 
     public String getUsername() {

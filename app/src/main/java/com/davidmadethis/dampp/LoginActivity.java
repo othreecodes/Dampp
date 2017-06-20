@@ -1,6 +1,7 @@
 package com.davidmadethis.dampp;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -20,6 +21,8 @@ import com.davidmadethis.dampp.http.Http;
 import com.davidmadethis.dampp.model.Client;
 import com.google.gson.Gson;
 
+import cc.cloudist.acplibrary.ACProgressConstant;
+import cc.cloudist.acplibrary.ACProgressFlower;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,8 +30,10 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     static ViewPager pager;
-    static String username;
-    static String password;
+    static String username = "";
+    static String password = "";
+
+
     static EditText usernameEditText;
 
     @Override
@@ -44,22 +49,27 @@ public class LoginActivity extends AppCompatActivity {
 
     public static void doLogin(String username, String password, final Context context) {
 
-
+        final ACProgressFlower dialog = new ACProgressFlower.Builder(context)
+                .direction(ACProgressConstant.DIRECT_CLOCKWISE)
+                .themeColor(Color.WHITE)
+                .fadeColor(Color.DKGRAY).build();
         Client client = new Client();
         client.setUsername(username).setPassword(password);
         String data = new Gson().toJson(client);
         Http http = new Http();
-
+        dialog.show();
         http.login(data).enqueue(new Callback<Object>() {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
 
-                Toast.makeText(context, response.message(), Toast.LENGTH_LONG)
+                Toast.makeText(context, response.body().toString(), Toast.LENGTH_LONG)
                         .show();
+                dialog.hide();
             }
 
             @Override
             public void onFailure(Call<Object> call, Throwable t) {
+                dialog.hide();
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_LONG)
                         .show();
             }
