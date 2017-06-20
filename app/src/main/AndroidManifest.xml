@@ -21,7 +21,6 @@
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".SignupActivity"></activity>
-        <activity android:name=".DamppPinActivity"></activity>
     </application>
 
 </manifest>

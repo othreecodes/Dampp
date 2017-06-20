@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.davidmadethis.dampp"
-        minSdkVersion 14
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -29,9 +29,7 @@ dependencies {
     compile 'com.android.support:design:25.3.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
-    compile ('com.github.orangegangsters:lollipin:2.0.0@aar') {
-        transitive = true
-    }
+    compile 'com.nightonke:blurlockview:1.0.0'
 
 
     testCompile 'junit:junit:4.12'

@@ -9,9 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.github.orangegangsters.lollipin.lib.managers.AppLock;
-import com.github.orangegangsters.lollipin.lib.managers.LockManager;
-
 /**
  * Created by root on 6/11/17.
  */
@@ -35,14 +32,6 @@ public class FollowUpFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-
-        if(isVisibleToUser) {
-            LockManager<DamppPinActivity> lockManager = LockManager.getInstance();
-//            lockManager.getAppLock().setLogoId(R.drawable.ic_homeing);
-//            lockManager.getAppLock().setFingerprintAuthEnabled(false);
-//            lockManager.getAppLock().setPasscode("2323");
-            lockManager.enableAppLock(getActivity(),DamppPinActivity.class);
-        }
 
     }
 
