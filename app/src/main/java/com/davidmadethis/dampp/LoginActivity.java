@@ -1,6 +1,8 @@
 package com.davidmadethis.dampp;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -47,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public static void doLogin(String username, String password, final Context context) {
+    public static void doLogin(String username, String password, final Context context, final Activity activity) {
 
         final ACProgressFlower dialog = new ACProgressFlower.Builder(context)
                 .direction(ACProgressConstant.DIRECT_CLOCKWISE)
@@ -65,6 +67,9 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(context, response.body().toString(), Toast.LENGTH_LONG)
                         .show();
                 dialog.hide();
+                Intent in = new Intent(activity, HomeActivity.class);
+                activity.startActivity(in);
+                activity.finish();
             }
 
             @Override
@@ -77,6 +82,9 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public void StartHome(){
+
+    }
     public class PagerAdapter extends FragmentPagerAdapter {
 
 
@@ -173,7 +181,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else if (password.isEmpty()) {
                             editText.setError("Please input your password");
                         } else {
-                            doLogin(username, password, getContext());
+                            doLogin(username, password, getContext(),getActivity());
                         }
 
 
