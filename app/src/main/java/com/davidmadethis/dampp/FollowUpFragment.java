@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.github.orangegangsters.lollipin.lib.managers.AppLock;
+import com.github.orangegangsters.lollipin.lib.managers.LockManager;
 
 /**
  * Created by root on 6/11/17.
@@ -36,9 +37,11 @@ public class FollowUpFragment extends Fragment {
         super.setUserVisibleHint(isVisibleToUser);
 
         if(isVisibleToUser) {
-            Intent intent = new Intent(getActivity(), DamppPinActivity.class);
-            intent.putExtra(AppLock.EXTRA_TYPE, AppLock.ENABLE_PINLOCK);
-            startActivityForResult(intent, REQUEST_CODE_ENABLE);
+            LockManager<DamppPinActivity> lockManager = LockManager.getInstance();
+            lockManager.getAppLock().setLogoId(R.drawable.ic_homeing);
+            lockManager.getAppLock().setFingerprintAuthEnabled(false);
+            lockManager.getAppLock().setPasscode("2323");
+            lockManager.enableAppLock(getActivity(),DamppPinActivity.class);
         }
 
     }
@@ -48,5 +51,7 @@ public class FollowUpFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         Toast.makeText(getActivity().getApplicationContext(),"GOTEN",Toast.LENGTH_LONG)
                 .show();
+
+        Log.e(TAG,data.getDataString());
     }
 }
