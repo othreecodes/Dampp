@@ -1,7 +1,5 @@
 package com.davidmadethis.dampp;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,9 +10,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,6 +18,9 @@ public class LoginActivity extends AppCompatActivity {
 
     static ViewPager pager;
     static String username;
+    static String password;
+    static EditText usernameEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +30,12 @@ public class LoginActivity extends AppCompatActivity {
         pager.setAdapter(pAdapter);
 
 
-
     }
 
+    public static void doLogin(String username,String password){
+
+
+    }
 
     public class PagerAdapter extends FragmentPagerAdapter {
 
@@ -61,34 +63,31 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-
     }
 
     public static class LoginFragment extends Fragment {
 
-        public LoginFragment(){
+        public LoginFragment() {
 
         }
 
-        EditText editText;
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View v = inflater.inflate(R.layout.fragment_login, container, false);
 
-            editText = (EditText) v.findViewById(R.id.editText);
-            editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            usernameEditText = (EditText) v.findViewById(R.id.username);
+            usernameEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
                 @Override
                 public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
 
                     boolean handled = false;
                     if (i == EditorInfo.IME_ACTION_NEXT) {
 
-                        editText.clearFocus();
-                        hideKeyboardFrom(getContext(),editText);
+                        usernameEditText.clearFocus();
+                        username = usernameEditText.getText().toString();
                         pager.setCurrentItem(2);
-                        //Do something
-
                         handled = true;
                     }
 
@@ -101,18 +100,62 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
-    public static void hideKeyboardFrom(Context context, View view) {
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
-    public static void hideKeyboard(Activity activity) {
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        //Find the currently focused view, so we can grab the correct window token from it.
-        View view = activity.getCurrentFocus();
-        //If no view currently has focus, create a new one, just so we can grab a window token from it
-        if (view == null) {
-            view = new View(activity);
+
+    public static class FollowUpFragment extends Fragment {
+
+        String TAG = this.getClass().getName();
+
+        public FollowUpFragment() {
         }
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+        int REQUEST_CODE_ENABLE = 333;
+        EditText editText;
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View v = inflater.inflate(R.layout.fragment_followup, container, false);
+
+            editText = (EditText) v.findViewById(R.id.password);
+            editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                @Override
+                public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+
+                    boolean handled = false;
+                    if (i == EditorInfo.IME_ACTION_GO) {
+
+
+                        password = editText.getText().toString();
+                        if (username.isEmpty()) {
+                            editText.clearFocus();
+                            usernameEditText.setError("Please enter a username");
+                            pager.setCurrentItem(0);
+                        } else if (password.isEmpty()) {
+                            editText.setError("Please input your password");
+                        } else {
+                            doLogin(username, password);
+                        }
+
+
+                        handled = true;
+                    }
+
+                    return handled;
+                }
+            });
+
+
+            return v;
+        }
+
+        @Override
+        public void setUserVisibleHint(boolean isVisibleToUser) {
+            super.setUserVisibleHint(isVisibleToUser);
+
+        }
+
+
     }
+
+
 }

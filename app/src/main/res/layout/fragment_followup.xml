@@ -10,7 +10,7 @@
 
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
