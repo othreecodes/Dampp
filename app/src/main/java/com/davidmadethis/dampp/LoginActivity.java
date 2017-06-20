@@ -43,6 +43,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public static void doLogin(String username, String password, final Context context) {
+
+
         Client client = new Client();
         client.setUsername(username).setPassword(password);
         String data = new Gson().toJson(client);
