@@ -38,9 +38,9 @@ public class FollowUpFragment extends Fragment {
 
         if(isVisibleToUser) {
             LockManager<DamppPinActivity> lockManager = LockManager.getInstance();
-            lockManager.getAppLock().setLogoId(R.drawable.ic_homeing);
-            lockManager.getAppLock().setFingerprintAuthEnabled(false);
-            lockManager.getAppLock().setPasscode("2323");
+//            lockManager.getAppLock().setLogoId(R.drawable.ic_homeing);
+//            lockManager.getAppLock().setFingerprintAuthEnabled(false);
+//            lockManager.getAppLock().setPasscode("2323");
             lockManager.enableAppLock(getActivity(),DamppPinActivity.class);
         }
 
