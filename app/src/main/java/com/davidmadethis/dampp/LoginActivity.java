@@ -1,5 +1,6 @@
 package com.davidmadethis.dampp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +14,15 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.davidmadethis.dampp.http.Http;
+import com.davidmadethis.dampp.model.Client;
+import com.google.gson.Gson;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,8 +42,26 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public static void doLogin(String username,String password){
+    public static void doLogin(String username, String password, final Context context) {
+        Client client = new Client();
+        client.setUsername(username).setPassword(password);
+        String data = new Gson().toJson(client);
+        Http http = new Http();
 
+        http.login(data).enqueue(new Callback<Object>() {
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
+
+                Toast.makeText(context, response.message(), Toast.LENGTH_LONG)
+                        .show();
+            }
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
 
     }
 
@@ -133,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else if (password.isEmpty()) {
                             editText.setError("Please input your password");
                         } else {
-                            doLogin(username, password);
+                            doLogin(username, password, getContext());
                         }
 
 
