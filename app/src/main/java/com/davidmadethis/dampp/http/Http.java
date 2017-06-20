@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Http {
     //TODO: i'll Change this once I've moved the app to heroku
-    public static final String API_URL = "http://172.30.15.119/api/v1/";
+    public static final String API_URL = "https://dampp.herokuapp.com/api/v1/";
 
     public Http(){
 
