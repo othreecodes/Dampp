@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.davidmadethis.dampp.fragment.HomeFragment;
+import com.davidmadethis.dampp.fragment.NotificationFragment;
+import com.davidmadethis.dampp.fragment.ProfileFragment;
 
 
 /**
@@ -24,12 +26,10 @@ public class HomePagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new HomeFragment();
             case 1:
-                return new HomeFragment();
+                return new NotificationFragment();
 
             case 2:
-                return new HomeFragment();
-            case 3:
-                return new HomeFragment();
+                return new ProfileFragment();
             default:
                 break;
         }
@@ -38,6 +38,6 @@ public class HomePagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 3;
     }
 }
