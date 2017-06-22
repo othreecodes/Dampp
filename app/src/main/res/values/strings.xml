@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Dampp</string>
+
+    <string name="content_desc_background">Frog backgroud image</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_label">SIGN IN</string>
+    <string name="sign_up_text">Don\'t have an account? Sign up!</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="email_hint">Email</string>
+    <string name="sign_up_button_label">SIGN UP</string>
+    <string name="signup_error_message">Please make sure you enter a username, password and email address</string>
+    <string name="signup_error_title">Oops!</string>
+    <string name="login_error_message">Please make sure you enter a username and a password</string>
+    <string name="login_error_title">Oops!</string>
+    <string name="menu_logout_label">Logout</string>
+    <string name="cancel_button_label">CANCEL</string>
+
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+
+    <string name="content_desc_button_divider">Button divider</string>
+    <string name="content_desc_message_icon">Message icon</string>
+    <string name="content_desc_user_avatar">User avatar</string>
+    <string name="content_desc_user_checkmark">User checkmark</string>
+    <string name="full_name">Full name (*won\'t be shown publicly)</string>
+    <string name="recent_matches">RECENT MATCHES</string>
+    <string name="suggestions">SUGGESTIONS</string>
 </resources>

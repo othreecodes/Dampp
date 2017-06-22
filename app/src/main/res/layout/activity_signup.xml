@@ -1,11 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AuthBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.davidmadethis.dampp.SignupActivity">
+ >
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        style="@style/AuthBackgroundImage"
+        android:contentDescription="@string/content_desc_background" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/AuthTitle" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:text="Sign up to get started"
+        style="@style/AuthSubTitle" />
+
+    <LinearLayout
+        android:id="@+id/editTextLayout"
+        style="@style/AuthFieldContainer" >
+
+        <EditText
+            android:id="@+id/fullName"
+            style="@style/AuthEditText"
+            android:hint="@string/full_name"
+            android:inputType="textAutoComplete" />
+
+        <EditText
+            android:id="@+id/usernameField"
+            style="@style/AuthEditText"
+            android:hint="@string/username_hint" >
 
 
+        </EditText>
 
-</android.support.constraint.ConstraintLayout>
+        <RadioGroup
+            android:orientation="horizontal"
+            android:padding="0dp"
+
+            android:id="@+id/gender_radio"
+            android:layout_margin="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:padding="0dp"
+                android:layout_margin="0dp"
+                android:id="@+id/female"
+                android:layout_weight="1"
+                android:text="@string/radio_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:padding="0dp"
+                android:layout_margin="0dp"
+                android:text="@string/radio_male"
+                android:id="@+id/male"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+
+        <EditText
+            android:id="@+id/passwordField"
+            style="@style/AuthEditText"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/buttonDivider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextLayout"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/content_desc_button_divider"
+        />
+
+    <Button
+        android:id="@+id/signupButton"
+        style="@style/AuthButton"
+        android:text="@string/sign_up_button_label"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextLayout"
+        android:layout_toLeftOf="@+id/buttonDivider"
+        android:layout_marginRight="0dp"
+
+        />
+
+    <Button
+        android:id="@+id/cancelButton"
+        style="@style/AuthButton"
+        android:text="@string/cancel_button_label"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editTextLayout"
+        android:layout_toRightOf="@id/buttonDivider"
+        android:layout_marginLeft="0dp" />
+
+</RelativeLayout>

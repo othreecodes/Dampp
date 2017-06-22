@@ -5,4 +5,36 @@
     android:background="@color/primary_dark"
     >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/accent"
+        android:background="@color/icons"
+        android:padding="10dp"
+        android:text="@string/recent_matches"
+        android:textStyle="bold" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="99dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/accent"
+        android:background="@color/icons"
+        android:padding="10dp"
+        android:text="@string/suggestions"
+        android:textStyle="bold" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
 </LinearLayout>

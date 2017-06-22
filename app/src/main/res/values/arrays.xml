@@ -2,8 +2,8 @@
 <resources>
 
     <string-array name="titles">
-        <item>Discover</item>
         <item>Notifications</item>
+        <item>Discover</item>
         <item>Profile</item>
     </string-array>
 
