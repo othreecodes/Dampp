@@ -40,4 +40,10 @@ public class HomePagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return 3;
     }
+
+
+    @Override
+    public int getItemPosition(Object object) {
+        return super.getItemPosition(object);
+    }
 }

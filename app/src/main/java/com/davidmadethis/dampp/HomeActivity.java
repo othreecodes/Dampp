@@ -39,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         mViewPager.setAdapter(new HomePagerAdapter(getSupportFragmentManager()));
         mViewPager.setOffscreenPageLimit(2);
 
+        mViewPager.setCurrentItem(1);
         final NavigationTabStrip navigationTabStrip = (NavigationTabStrip) findViewById(R.id.nts_center);
         navigationTabStrip.setViewPager(mViewPager);
 

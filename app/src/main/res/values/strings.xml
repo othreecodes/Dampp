@@ -26,4 +26,6 @@
     <string name="content_desc_user_avatar">User avatar</string>
     <string name="content_desc_user_checkmark">User checkmark</string>
     <string name="full_name">Full name (*won\'t be shown publicly)</string>
+    <string name="recent_matches">RECENT MATCHES</string>
+    <string name="suggestions">SUGGESTIONS</string>
 </resources>

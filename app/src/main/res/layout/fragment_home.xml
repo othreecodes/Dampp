@@ -5,25 +5,36 @@
     android:background="@color/primary_dark"
     >
 
-    <GridView
-        android:id="@+id/friendsGrid"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:clipToPadding="false"
-        android:horizontalSpacing="@dimen/user_grid_spacing"
-        android:numColumns="auto_fit"
-        android:columnWidth="90dp"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="@dimen/user_grid_spacing"
-        android:gravity="center"
-        android:layout_centerHorizontal="true">
-    </GridView>
-
     <TextView
-        android:id="@android:id/empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nonoe" />
+        android:textColor="@color/accent"
+        android:background="@color/icons"
+        android:padding="10dp"
+        android:text="@string/recent_matches"
+        android:textStyle="bold" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="99dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/accent"
+        android:background="@color/icons"
+        android:padding="10dp"
+        android:text="@string/suggestions"
+        android:textStyle="bold" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
 </LinearLayout>

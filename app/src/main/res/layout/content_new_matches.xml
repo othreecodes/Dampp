@@ -12,12 +12,15 @@
         android:layout_height="72dp"
         android:src="@drawable/ic_user_male"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/pink"/>
+        app:civ_border_color="@color/icons"/>
 
     <TextView
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:text="username"
+        android:textColor="@color/icons"
         android:textAlignment="center"
         android:layout_height="match_parent" />
+
+
 </LinearLayout>
