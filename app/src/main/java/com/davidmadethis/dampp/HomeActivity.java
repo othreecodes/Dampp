@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
 //        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_homeing);
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setElevation(0);
+//        getSupportActionBar().setElevation(0);
         setContentView(R.layout.activity_home);
         mViewPager = (ViewPager) findViewById(R.id.vp_main);
 

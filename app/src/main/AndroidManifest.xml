@@ -22,7 +22,9 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SignupActivity" />
+        <activity
+            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".SignupActivity" />
         <activity
             android:name=".HomeActivity"
             android:theme="@style/AppTheme"></activity>

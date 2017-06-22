@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primary">#03A9F4</color>
-    <color name="pink">#F09372</color>
+    <color name="pink">#FD8B66</color>
     <color name="primary_dark">#0288D1</color>
     <color name="primary_light">#B3E5FC</color>
-    <color name="accent">#FFC107</color>
+    <color name="accent">@color/pink</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#757575</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
+
+    <color name="light_purple_button">@color/pink</color>
+    <color name="pressed_purple_button">#F09377</color>
+    <color name="focused_purple_button">#fff</color>
+
+    <color name="background_purple">#3F2466</color>
+    <color name="light_gray">#bbbbbb</color>
+    <color name="apptheme_color">#61408c</color>
+
+    <color name="text_color">#250054</color>
+    <color name="light_purple_background">#e9e4ed</color>
+    <color name="swipeRefresh1">#482c6f</color>
+    <color name="swipeRefresh2">#ad78d9</color>
+    <color name="swipeRefresh3">#dcadf4</color>
+    <color name="swipeRefresh4">#ad78d9</color>
 </resources>
