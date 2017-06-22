@@ -18,6 +18,9 @@
     <string name="menu_logout_label">Logout</string>
     <string name="cancel_button_label">CANCEL</string>
 
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+
     <string name="content_desc_button_divider">Button divider</string>
     <string name="content_desc_message_icon">Message icon</string>
     <string name="content_desc_user_avatar">User avatar</string>
