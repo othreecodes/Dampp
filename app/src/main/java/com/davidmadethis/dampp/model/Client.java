@@ -21,6 +21,9 @@ public class Client {
     @SerializedName("photo_url")
     private String photoUrl;
 
+    @SerializedName("sex")
+    private String sex;
+
     public String getUsername() {
         return username;
     }
@@ -72,6 +75,15 @@ public class Client {
 
     public Client setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
+        return this;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public Client setSex(String sex) {
+        this.sex = sex;
         return this;
     }
 }

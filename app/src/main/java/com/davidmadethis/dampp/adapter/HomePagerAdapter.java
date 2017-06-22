@@ -23,9 +23,9 @@ public class HomePagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position){
-            case 0:
-                return new HomeFragment();
             case 1:
+                return new HomeFragment();
+            case 0:
                 return new NotificationFragment();
 
             case 2:

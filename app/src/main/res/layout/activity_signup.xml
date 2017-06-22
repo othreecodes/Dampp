@@ -16,6 +16,7 @@
 
     <TextView
         android:id="@+id/subtitle"
+        android:text="Sign up to get started"
         style="@style/AuthSubTitle" />
 
     <LinearLayout
