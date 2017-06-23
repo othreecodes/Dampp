@@ -20,9 +20,9 @@ public class Client {
     private String fullName;
     @SerializedName("photo_url")
     private String photoUrl;
-
     @SerializedName("sex")
     private String sex;
+
 
     public String getUsername() {
         return username;

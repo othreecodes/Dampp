@@ -67,9 +67,13 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(context, response.body().toString(), Toast.LENGTH_LONG)
                         .show();
                 dialog.hide();
+
+
                 Intent in = new Intent(activity, HomeActivity.class);
                 activity.startActivity(in);
                 activity.finish();
+
+
             }
 
             @Override
