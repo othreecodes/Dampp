@@ -14,28 +14,21 @@ import com.gigamole.navigationtabstrip.NavigationTabStrip;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class HomeActivity extends AppCompatActivity {
 
-    private ViewPager mViewPager;
-
-    private NavigationTabStrip mTopNavigationTabStrip;
-    private NavigationTabStrip mCenterNavigationTabStrip;
-    private NavigationTabStrip mBottomNavigationTabStrip;
+    @Bind(R.id.vp_main)
+    ViewPager mViewPager;
+    @Bind(R.id.nts_center)
+    NavigationTabStrip mCenterNavigationTabStrip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-//        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.pink)));
-//        getSupportActionBar().setTitle("");
-//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_homeing);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setElevation(0);
         setContentView(R.layout.activity_home);
-        mViewPager = (ViewPager) findViewById(R.id.vp_main);
-
-        mCenterNavigationTabStrip = (NavigationTabStrip) findViewById(R.id.nts_center);
+        ButterKnife.bind(this);
         mViewPager.setAdapter(new HomePagerAdapter(getSupportFragmentManager()));
         mViewPager.setOffscreenPageLimit(2);
 

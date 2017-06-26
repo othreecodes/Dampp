@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/backgroundImage"
         style="@style/AuthBackgroundImage"
-        android:contentDescription="@string/content_desc_background" />
+        />
 
     <TextView
         android:id="@+id/title"
@@ -29,13 +29,6 @@
             android:hint="@string/full_name"
             android:inputType="textAutoComplete" />
 
-        <EditText
-            android:id="@+id/usernameField"
-            style="@style/AuthEditText"
-            android:hint="@string/username_hint" >
-
-
-        </EditText>
 
         <RadioGroup
             android:orientation="horizontal"
@@ -63,6 +56,14 @@
                 android:layout_height="wrap_content"/>
         </RadioGroup>
 
+
+        <EditText
+            android:id="@+id/usernameField"
+            style="@style/AuthEditText"
+            android:hint="@string/username_hint" >
+
+
+        </EditText>
 
         <EditText
             android:id="@+id/passwordField"

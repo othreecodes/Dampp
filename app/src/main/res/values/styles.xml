@@ -43,7 +43,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:text">@string/app_name </item>
+        <item name="android:text">@string/app_name</item>
     </style>
 
     <style name="AuthSubTitle" parent="AuthTitle">
@@ -97,4 +97,8 @@
     </style>
 
     <string name="subtitle" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

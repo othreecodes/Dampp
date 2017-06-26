@@ -1,12 +1,15 @@
 package com.davidmadethis.dampp.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by root on 6/20/17.
  */
 
-public class Client {
+public class Client implements Parcelable {
 
     @SerializedName("username")
     private String username;
@@ -23,6 +26,29 @@ public class Client {
     @SerializedName("sex")
     private String sex;
 
+    public Client(){}
+
+    public Client(Parcel in) {
+        username = in.readString();
+        password = in.readString();
+        isVerified = in.readByte() != 0;
+        isActive = in.readByte() != 0;
+        fullName = in.readString();
+        photoUrl = in.readString();
+        sex = in.readString();
+    }
+
+    public static final Creator<Client> CREATOR = new Creator<Client>() {
+        @Override
+        public Client createFromParcel(Parcel in) {
+            return new Client(in);
+        }
+
+        @Override
+        public Client[] newArray(int size) {
+            return new Client[size];
+        }
+    };
 
     public String getUsername() {
         return username;
@@ -85,5 +111,21 @@ public class Client {
     public Client setSex(String sex) {
         this.sex = sex;
         return this;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(username);
+        parcel.writeString(password);
+        parcel.writeByte((byte) (isVerified ? 1 : 0));
+        parcel.writeByte((byte) (isActive ? 1 : 0));
+        parcel.writeString(fullName);
+        parcel.writeString(photoUrl);
+        parcel.writeString(sex);
     }
 }

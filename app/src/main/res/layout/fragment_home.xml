@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/accent"
         android:background="@color/icons"
-        android:padding="10dp"
+        android:padding="5dp"
         android:text="@string/recent_matches"
         android:textStyle="bold" />
 
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/accent"
         android:background="@color/icons"
-        android:padding="10dp"
+        android:padding="5dp"
         android:text="@string/suggestions"
         android:textStyle="bold" />
 
@@ -36,6 +36,7 @@
         android:layout_width="match_parent"
         android:id="@+id/recycler_suggestions"
         android:orientation="vertical"
+
         android:layout_height="wrap_content">
 
     </android.support.v7.widget.RecyclerView>
