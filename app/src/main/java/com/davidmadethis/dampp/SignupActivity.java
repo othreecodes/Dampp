@@ -1,5 +1,6 @@
 package com.davidmadethis.dampp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -93,9 +94,7 @@ public class SignupActivity extends AppCompatActivity {
                                 int code = data.get("code").getAsInt();
                                 String message = data.get("message").getAsString();
                                 if(code==100){
-
-
-
+                                    startActivity(new Intent(getApplicationContext(), FirstTimeActivity.class));
                                 }else{
                                     //TODO: Look for a good alert library
                                     Toast.makeText(getApplicationContext(),String.valueOf(code)+": "+message,Toast.LENGTH_LONG)
