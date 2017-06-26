@@ -60,6 +60,8 @@ public class HomeFragment extends Fragment {
         Client clientthree = new Client().setUsername("danieldas");
         users.add(clientone);
         users.add(clienttwo);
+        users.add(clienttwo);
+        users.add(clienttwo);
         users.add(clientthree);
 
         matchesAdapter = new MatchesAdapter(users, getContext());

@@ -36,5 +36,6 @@ dependencies {
     compile 'com.mxn.soul:flowingdrawer-core:2.0.0'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
     testCompile 'junit:junit:4.12'
 }
