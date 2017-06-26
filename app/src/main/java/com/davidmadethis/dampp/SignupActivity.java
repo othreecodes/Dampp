@@ -110,6 +110,8 @@ public class SignupActivity extends AppCompatActivity {
                         public void onFailure(Call<JsonObject> call, Throwable t) {
 
                             dialog.hide();
+                            Toast.makeText(SignupActivity.this, t.getMessage(), Toast.LENGTH_LONG)
+                                    .show();
                         }
                     });
 
