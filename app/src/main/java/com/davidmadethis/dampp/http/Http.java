@@ -1,5 +1,7 @@
 package com.davidmadethis.dampp.http;
 
+import com.google.gson.JsonObject;
+
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -10,19 +12,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Http {
     //TODO: i'll Change this once I've moved the app to heroku
-    public static final String API_URL = "https://dampp.herokuapp.com/api/v1/";
-//    public static final String API_URL = "http://192.168.43.132/api/v1/";
+//    public static final String API_URL = "https://dampp.herokuapp.com/api/v1/";
+    public static final String API_URL = "http://10.0.23.1/api/v1/";
 
     public Http() {
 
     }
 
-
-
-
-
-
-    public Call<Object> login(String json) {
+    public Call<JsonObject> login(String json) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_URL)
@@ -58,5 +55,16 @@ public class Http {
 
     }
 
+    public Call<JsonObject> register(String body) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(API_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        DamppService api = retrofit.create(DamppService.class);
+        return api.register(body);
+
+    }
 
 }

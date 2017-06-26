@@ -26,8 +26,9 @@ public class Client implements Parcelable {
     @SerializedName("sex")
     private String sex;
 
+    public Client(){}
 
-    protected Client(Parcel in) {
+    public Client(Parcel in) {
         username = in.readString();
         password = in.readString();
         isVerified = in.readByte() != 0;

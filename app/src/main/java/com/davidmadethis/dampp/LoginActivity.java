@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.davidmadethis.dampp.http.Http;
 import com.davidmadethis.dampp.model.Client;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import cc.cloudist.acplibrary.ACProgressConstant;
 import cc.cloudist.acplibrary.ACProgressFlower;
@@ -60,9 +61,9 @@ public class LoginActivity extends AppCompatActivity {
         String data = new Gson().toJson(client);
         Http http = new Http();
         dialog.show();
-        http.login(data).enqueue(new Callback<Object>() {
+        http.login(data).enqueue(new Callback<JsonObject>() {
             @Override
-            public void onResponse(Call<Object> call, Response<Object> response) {
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
 
                 Toast.makeText(context, response.body().toString(), Toast.LENGTH_LONG)
                         .show();
@@ -77,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Object> call, Throwable t) {
+            public void onFailure(Call<JsonObject> call, Throwable t) {
                 dialog.hide();
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_LONG)
                         .show();
