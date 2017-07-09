@@ -15,6 +15,7 @@
     <color name="focused_purple_button">#fff</color>
 
     <color name="black_overlay">#66000000</color>
+    <color name="light_gray">#66000000</color>
 
     <color name="md_red50">#ffffebee</color>
     <color name="md_red100">#ffffcdd2</color>
