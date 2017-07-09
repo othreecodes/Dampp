@@ -78,4 +78,10 @@ public class MatchActivity extends AppCompatActivity implements ShakeDetector.Li
         nextPic();
         Toast.makeText(MatchActivity.this, "not matched", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        makeFullScreen();
+    }
 }
