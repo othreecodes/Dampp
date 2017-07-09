@@ -5,11 +5,13 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.davidmadethis.dampp"
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
     }
     buildTypes {
         release {
@@ -25,10 +27,14 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-
+    compile 'com.github.jd-alexander:LikeButton:0.2.1'
+    compile 'com.android.support:support-v13:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:support-vector-drawable:25.3.1'
+    compile 'com.squareup:seismic:1.0.2'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'cc.cloudist.acplibrary:library:1.2.1'
@@ -38,5 +44,6 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.h6ah4i.android.materialshadowninepatch:materialshadowninepatch:0.6.5'
     testCompile 'junit:junit:4.12'
 }

@@ -1,5 +1,7 @@
 package com.davidmadethis.dampp.http;
 
+import android.content.Context;
+
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -7,7 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by root on 6/20/17.
+ * Updated by User on 6/20/17.
  */
 
 public class Http {
@@ -19,50 +21,42 @@ public class Http {
 
     }
 
-    public Call<JsonObject> login(String json) {
-
+    public static Retrofit getRetrofit(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        DamppService api = retrofit.create(DamppService.class);
-        return api.login(json);
+        return retrofit;
+    }
 
+    public static DamppService getApiService(){
+        Retrofit retrofit = getRetrofit();
+        DamppService api = retrofit.create(DamppService.class);
+        return api;
+    }
+
+    public Call<JsonObject> login(String json) {
+
+        DamppService api = getApiService();
+        return api.login(json);
     }
 
     public Call<Object> match(String token) {
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(API_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        DamppService api = retrofit.create(DamppService.class);
+        DamppService api = getApiService();
         return api.matches(token);
 
     }
 
     public Call<Object> suggestions(String token) {
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(API_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        DamppService api = retrofit.create(DamppService.class);
+        DamppService api = getApiService();
         return api.suggestions(token);
-
     }
 
     public Call<JsonObject> register(String body) {
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(API_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        DamppService api = retrofit.create(DamppService.class);
+        DamppService api = getApiService();
         return api.register(body);
 
     }
