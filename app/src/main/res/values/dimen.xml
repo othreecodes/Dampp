@@ -10,6 +10,12 @@
 
     <dimen name="pattern_cell_radius">5dp</dimen>
 
+    <dimen name="app_bar_height">300dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="ic_width">24dp</dimen>
+    <dimen name="ic_height">24dp</dimen>
+    <dimen name="marg">12dp</dimen>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
@@ -21,4 +27,6 @@
     <dimen name="inbox_horizontal_margin">8dp</dimen>
     <dimen name="message_vertical_padding">8dp</dimen>
     <dimen name="user_grid_spacing">8dp</dimen>
+
+
 </resources>

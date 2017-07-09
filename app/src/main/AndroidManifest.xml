@@ -33,6 +33,11 @@
             android:label="@string/title_activity_profile"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FirstTimeActivity"></activity>
+        <activity
+            android:name=".MatchActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_match"
+            android:theme="@style/FullscreenTheme"/>
     </application>
 
 </manifest>
